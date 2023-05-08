@@ -1,5 +1,5 @@
 import Header from '../../components/header'
-import * as C from  './style'
+import * as C from './style'
 const HomePage = () => {
   return (
     <C.ContainerHomePage>
