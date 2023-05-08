@@ -1,8 +1,10 @@
-import React from 'react'
-
+import Header from '../../components/header'
+import * as C from  './style'
 const HomePage = () => {
   return (
-    <div>Home</div>
+    <C.ContainerHomePage>
+      <Header />
+    </C.ContainerHomePage>
   )
 }
 

@@ -1,5 +1,12 @@
 import styled from 'styled-components'
 
-export const Header = styled.header`
-    
+export const ContainerHeader = styled.header`
+    height: 75px;
+    width: 100%;
+    background-color: red;
 `
+export const Navigation  = styled.nav``
+export const List  = styled.ul``
+export const ContainerLinkRouter  = styled.div``
+export const ContainerUser  = styled.div``
+export const Link = styled.li``
