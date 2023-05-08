@@ -1,4 +1,4 @@
-import React from 'react'
+import { NavLink } from "react-router-dom";
 import * as C from './style'
 const index = () => {
   return (
@@ -6,10 +6,26 @@ const index = () => {
        <C.Navigation>
           <C.List>
               <C.ContainerLinkRouter>
-                  <C.Link> Home</C.Link>
-                  <C.Link> Criar um Projeto</C.Link>
-                  <C.Link> Encontrar um projeto </C.Link>
-                  <C.Link> Competições </C.Link>
+                <NavLink to="/">
+                  <C.ItemList>
+                  Home
+                  </C.ItemList>
+                </NavLink>
+                <NavLink to="/">
+                  <C.ItemList>
+                  Criar um Projeto
+                  </C.ItemList>
+                </NavLink>
+                <NavLink to="/">
+                  <C.ItemList>
+                  Encontrar um projeto
+                  </C.ItemList>
+                </NavLink>
+                <NavLink to="/">
+                  <C.ItemList>
+                  Competições
+                  </C.ItemList>
+                </NavLink>
               </C.ContainerLinkRouter>
               <C.ContainerUser>
                 

@@ -9,4 +9,5 @@ export const Navigation  = styled.nav``
 export const List  = styled.ul``
 export const ContainerLinkRouter  = styled.div``
 export const ContainerUser  = styled.div``
-export const Link = styled.li``
+export const ItemList = styled.li``
+export const Link = styled.a``
