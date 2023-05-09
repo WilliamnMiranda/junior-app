@@ -1,11 +1,24 @@
 import { NavLink } from 'react-router-dom'
-import React from 'react'
+import React, { useState } from 'react'
 import * as C from './style.tsx'
-
+import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
 function Header() {
+  const [open, setOpen] = useState(true)
   return (
     <C.ContainerHeader>
-      <C.Navigation>
+      <C.ContainerIconsAndLogoMobile>
+        <C.LogoMobile> Mylogo </C.LogoMobile>
+        {open ? (
+          <C.ContainerIcon>
+            <AiOutlineClose />
+          </C.ContainerIcon>
+        ) : (
+          <C.ContainerIcon>
+            <AiOutlineMenu />
+          </C.ContainerIcon>
+        )}
+      </C.ContainerIconsAndLogoMobile>
+      <C.Navigation status={open}>
         <C.List>
           <C.Logo> Mylogo </C.Logo>
           <C.ContainerLinkRouter>

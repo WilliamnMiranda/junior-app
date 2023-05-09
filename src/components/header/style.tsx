@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+interface INavigation {
+  status: boolean
+}
+
 export const ContainerHeader = styled.header`
   padding: 0 320px;
   height: 75px;
@@ -10,6 +14,7 @@ export const ContainerHeader = styled.header`
   align-items: center;
   @media (max-width: 1480px) {
     padding: 0 50px;
+    flex-direction: column;
   }
   @media (max-width: 925px) {
     padding: 0 5px;
@@ -19,6 +24,33 @@ export const ContainerHeader = styled.header`
     height: auto;
     align-items: flex-start;
     background-color: red;
+  }
+`
+export const ContainerIcon = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 1.5em;
+  svg {
+    display: none;
+  }
+  @media (max-width: 768px) {
+    svg {
+      display: block;
+      cursor: pointer;
+    }
+  }
+`
+export const ContainerIconsAndLogoMobile = styled.div`
+  justify-content: space-between;
+  align-items: center;
+  display: none;
+  height: 40px;
+  width: 100%;
+  margin-bottom: 20px;
+  @media (max-width: 768px) {
+    display: flex;
   }
 `
 export const ContainerLinkRouter = styled.div`
@@ -35,10 +67,21 @@ export const Logo = styled.div`
   @media (max-width: 768px) {
     margin-right: 0px;
     margin-bottom: 20px;
+    display: none;
   }
 `
-export const Navigation = styled.nav`
+export const LogoMobile = styled(Logo)`
+  @media (max-width: 768px) {
+    display: block;
+    margin-right: 0px;
+    margin-bottom: 0px;
+  }
+`
+export const Navigation = styled.nav<INavigation>`
   width: 100%;
+  @media (max-width: 768px) {
+    display: ${({ status }) => (status ? 'block' : 'none')};
+  }
 `
 export const List = styled.ul`
   display: flex;
