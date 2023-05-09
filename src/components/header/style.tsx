@@ -93,8 +93,8 @@ export const Navigation = styled.nav<INavigation>`
   width: 100%;
   animation: ${animationMenu} 0.1s linear;
   overflow: hidden;
-  margin-top: 20px;
   @media (max-width: 768px) {
+    margin-top: 20px;
     display: ${({ status }) => (status ? 'block' : 'none')};
   }
 `
