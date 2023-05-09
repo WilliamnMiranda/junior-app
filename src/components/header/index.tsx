@@ -2,23 +2,24 @@ import { NavLink } from 'react-router-dom'
 import React, { useState } from 'react'
 import * as C from './style.tsx'
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
+import useHeader from '../../hooks/useHeader.ts'
 function Header() {
-  const [open, setOpen] = useState(true)
+  const { statusMenu, setStatusMenu, toggleMenu } = useHeader()
   return (
     <C.ContainerHeader>
       <C.ContainerIconsAndLogoMobile>
         <C.LogoMobile> Mylogo </C.LogoMobile>
-        {open ? (
-          <C.ContainerIcon>
+        {statusMenu ? (
+          <C.ContainerIcon onClick={() => setStatusMenu(false)}>
             <AiOutlineClose />
           </C.ContainerIcon>
         ) : (
-          <C.ContainerIcon>
+          <C.ContainerIcon onClick={() => setStatusMenu(true)}>
             <AiOutlineMenu />
           </C.ContainerIcon>
         )}
       </C.ContainerIconsAndLogoMobile>
-      <C.Navigation status={open}>
+      <C.Navigation status={statusMenu}>
         <C.List>
           <C.Logo> Mylogo </C.Logo>
           <C.ContainerLinkRouter>
