@@ -22,6 +22,7 @@ export const ContainerHeader = styled.header`
   text-transform: uppercase;
   display: flex;
   align-items: center;
+  font-family: 'Roboto', sans-serif;
   @media (max-width: 1480px) {
     padding: 0 50px;
     flex-direction: column;

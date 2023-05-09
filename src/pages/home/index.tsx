@@ -7,6 +7,7 @@ const HomePage = () => {
       <C.SearchByType>
         <C.Content>
           <C.TittleSearch> Encontre projetos que desafiam e desenvolvem suas habilidades </C.TittleSearch>
+          <C.SubTittleSearch> Networking é sobre construir relacionamentos - comece agora </C.SubTittleSearch>
         </C.Content>
       </C.SearchByType>
     </C.ContainerHomePage>

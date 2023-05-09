@@ -18,8 +18,17 @@ export const Content= styled.article`
 export const TittleSearch = styled.h1`
     color: white;
     line-height: 120%;
-    font-size: 2.0em;
+    font-size: 1.6em;
     font-weight: 500;
     font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+`
+ export const SubTittleSearch = styled.h2`
+    color: white;
+    line-height: 120%;
+    font-size: 1.0em;
+    text-align: center;
+    font-weight: 500;
     text-transform: uppercase;
 `
