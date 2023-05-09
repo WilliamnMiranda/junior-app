@@ -4,6 +4,7 @@ const HomePage = () => {
   return (
     <C.ContainerHomePage>
       <Header />
+      <C.SearchByType></C.SearchByType>
     </C.ContainerHomePage>
   )
 }
