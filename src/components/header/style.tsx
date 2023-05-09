@@ -1,4 +1,14 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+
+const animationMenu = keyframes`
+  from {
+    height: 0;
+  }
+
+  to {
+    height: 150px;
+  }
+`
 
 interface INavigation {
   status: boolean
@@ -18,12 +28,14 @@ export const ContainerHeader = styled.header`
   }
   @media (max-width: 925px) {
     padding: 0 5px;
+    height: auto;
   }
   @media (max-width: 768px) {
+    display: flex;
     padding: 10px 20px;
     height: auto;
-    align-items: flex-start;
-    background-color: red;
+    align-items: center;
+    background-color: pink;
   }
 `
 export const ContainerIcon = styled.div`
@@ -46,9 +58,9 @@ export const ContainerIconsAndLogoMobile = styled.div`
   justify-content: space-between;
   align-items: center;
   display: none;
-  height: 40px;
+  background-color: grey;
+  height: auto;
   width: 100%;
-  margin-bottom: 20px;
   @media (max-width: 768px) {
     display: flex;
   }
@@ -79,6 +91,9 @@ export const LogoMobile = styled(Logo)`
 `
 export const Navigation = styled.nav<INavigation>`
   width: 100%;
+  animation: ${animationMenu} 0.1s linear;
+  overflow: hidden;
+  margin-top: 20px;
   @media (max-width: 768px) {
     display: ${({ status }) => (status ? 'block' : 'none')};
   }
