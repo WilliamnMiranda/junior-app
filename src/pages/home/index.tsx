@@ -1,4 +1,5 @@
 import Header from '../../components/header'
+import popularLanguages from '../../utils/languages'
 import * as C from './style'
 const HomePage = () => {
   return (
@@ -14,6 +15,21 @@ const HomePage = () => {
           </C.ContainerInputSearch>
         </C.Content>
       </C.SearchByType>
+
+      <C.PopularTypes>
+        <C.TittlePopularLanguages>Linguagems populares </C.TittlePopularLanguages>
+        <C.ContainerIconsLanguages>
+          {popularLanguages.map((item) => {
+            return (
+              <>
+                <C.ContainerIcon>
+                  <C.IconLanguage key={item.name} src={item.icon} alt={item.name} />
+                </C.ContainerIcon>
+              </>
+            )
+          })}
+        </C.ContainerIconsLanguages>
+      </C.PopularTypes>
     </C.ContainerHomePage>
   )
 }
