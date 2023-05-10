@@ -22,7 +22,6 @@ export const ContainerHeader = styled.header`
   text-transform: uppercase;
   display: flex;
   align-items: center;
-  font-family: 'Roboto', sans-serif;
   @media (max-width: 1480px) {
     padding: 0 50px;
     flex-direction: column;
@@ -104,7 +103,8 @@ export const List = styled.ul`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  font-weight: bold;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
   a:visited {
     color: rgba(0, 0, 0, 0.6);
   }

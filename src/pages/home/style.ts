@@ -20,7 +20,7 @@ export const Content= styled.article`
 export const TittleSearch = styled.h1`
     color: white;
     line-height: 120%;
-    font-size: 1.6em;
+    font-size: 1.7em;
     font-weight: 500;
     font-family: 'Inter', sans-serif;
     text-transform: uppercase;
