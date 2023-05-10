@@ -36,7 +36,7 @@ export const ContainerHeader = styled.header`
     padding: 10px 20px;
     height: auto;
     align-items: center;
-    background-color: pink;
+    color: rgba(255, 255, 255, 1);
   }
 `
 export const ContainerIcon = styled.div`
@@ -109,7 +109,7 @@ export const List = styled.ul`
     color: rgba(0, 0, 0, 0.6);
   }
   a:hover {
-    color: pink;
+    color: rgb(13, 149, 225);
   }
   @media (max-width: 768px) {
     flex-direction: column;
