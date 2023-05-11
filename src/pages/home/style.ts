@@ -144,3 +144,25 @@ export const IconLanguage = styled.img`
     height: 40px;
   }
 `
+export const ContainerRecentsProject = styled.section`
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+`
+
+export const ContainerProjects = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px 320px 50px 320px;
+  @media (max-width: 1480px) {
+    padding: 0 50px;
+  }
+  @media (max-width: 925px) {
+    padding: 0 5px;
+  }
+  @media (max-width: 768px) {
+    height: auto;
+    padding: 30px 10px;
+  }
+`

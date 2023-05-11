@@ -1,6 +1,9 @@
 import Header from '../../components/header'
-import popularLanguages from '../../utils/languages'
+import Project from '../../components/project'
+import popularLanguages from '../../utils/popularLanguages'
+import projects from '../../utils/projects'
 import * as C from './style'
+
 const HomePage = () => {
   return (
     <C.ContainerHomePage>
@@ -30,6 +33,15 @@ const HomePage = () => {
           })}
         </C.ContainerIconsLanguages>
       </C.PopularTypes>
+
+      <C.ContainerRecentsProject>
+        <C.TittlePopularLanguages> Projetos Recentes </C.TittlePopularLanguages>
+        <C.ContainerProjects>
+          {projects.map((project) => {
+            return <Project project={project} />
+          })}
+        </C.ContainerProjects>
+      </C.ContainerRecentsProject>
     </C.ContainerHomePage>
   )
 }
