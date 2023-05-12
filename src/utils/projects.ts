@@ -2,7 +2,7 @@ const projects = [
   {
     coreTechnology: 'react',
     level: 'Junior',
-    name: 'E-Commerce de produtos de casa',
+    name: 'E-Commerce de produtos de casa loremos loremos lore  loremos lore  loremos loremos loremos loremos loremos loremos loremos loremos',
     owner: 'William',
     participants: ['1', '2', '2'],
     technologies: ['javascript', 'react', 'nodejs', 'vuejs', 'typescript', 'mongodb', 'dotnetcore', 'php'],
@@ -133,7 +133,7 @@ const projects = [
     ],
     likes: 10,
     description:
-      'Lorem ipsum dolor sit amet, consectetur lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem',
+      'Lorem ipsum dolor sit amet, consectetur lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem lorem  lorem ipsum dolor lorem ipsum dolor lorem',
     views: 12,
   },
 

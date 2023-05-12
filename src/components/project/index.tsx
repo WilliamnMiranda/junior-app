@@ -1,8 +1,7 @@
-import React from 'react'
 import * as C from './style'
 import languages from '../../utils/languages'
 import Type from '../type'
-
+import { AiFillEye, AiFillHeart } from 'react-icons/ai'
 interface IProject {
   project: {
     coreTechnology: String
@@ -40,8 +39,24 @@ function Project({ project }: IProject) {
         <C.ContainerTeamProject></C.ContainerTeamProject>
         <C.ContainerViewsProject></C.ContainerViewsProject>
       </C.ContainerInfoProject>
+      <C.ContainerViewsAndParticipants>
+        <C.ContainerInfos>
+          <C.ContainerItemView>
+            <AiFillHeart /> 20
+          </C.ContainerItemView>
+          <C.ContainerItemView>
+            <AiFillEye /> 12
+          </C.ContainerItemView>
+        </C.ContainerInfos>
 
-      <C.ButtonViewProject> VER PROJETOS </C.ButtonViewProject>
+        <C.ContainerParticipants>
+          <C.Participant></C.Participant>
+          <C.Participant></C.Participant>
+          <C.Participant></C.Participant>
+          <C.Participant></C.Participant>
+        </C.ContainerParticipants>
+      </C.ContainerViewsAndParticipants>
+      <C.ButtonViewProject> VER PROJETO </C.ButtonViewProject>
     </C.ContainerProject>
   )
 }
