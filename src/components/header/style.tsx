@@ -24,7 +24,6 @@ export const ContainerHeader = styled.header`
   align-items: center;
   @media (max-width: 1480px) {
     padding: 0 50px;
-    flex-direction: column;
   }
   @media (max-width: 925px) {
     padding: 0 5px;
