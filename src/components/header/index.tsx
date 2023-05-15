@@ -26,7 +26,7 @@ function Header() {
             <NavLink to="/">
               <C.ItemList>Home</C.ItemList>
             </NavLink>
-            <NavLink to="/">
+            <NavLink to="/create/project">
               <C.ItemList>Criar um Projeto</C.ItemList>
             </NavLink>
             <NavLink to="/">
