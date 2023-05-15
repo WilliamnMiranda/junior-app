@@ -1,20 +1,23 @@
 import React from 'react'
 import * as C from './style'
+import Header from '../../components/header'
 function CreateProject() {
   return (
-    <C.ContainerCreateProject>
+    <>
+      <Header />
       <C.HeaderCreateJob> Create a job </C.HeaderCreateJob>
-
-      <C.ContainerInfosProject>
-        <C.ContainerOneInput>
-          <C.ContainerInfo>
-            <C.Label>Qual nome do projeto ?</C.Label>
-            <C.Input />
-          </C.ContainerInfo>
-        </C.ContainerOneInput>
-        <C.ContainerTwoInputs></C.ContainerTwoInputs>
-      </C.ContainerInfosProject>
-    </C.ContainerCreateProject>
+      <C.ContainerCreateProject>
+        <C.ContainerInfosProject>
+          <C.ContainerOneInput>
+            <C.ContainerInfo>
+              <C.Label>Nome do projeto</C.Label>
+              <C.Input />
+            </C.ContainerInfo>
+          </C.ContainerOneInput>
+          <C.ContainerTwoInputs></C.ContainerTwoInputs>
+        </C.ContainerInfosProject>
+      </C.ContainerCreateProject>
+    </>
   )
 }
 
