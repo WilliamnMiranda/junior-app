@@ -7,6 +7,8 @@ export const useAuth = () => {
     queryFn: () => userServices.auth(),
   })
 
+  if (!isLoading && data) console.log('entrei')
+
   return {
     data,
     isLoading,
