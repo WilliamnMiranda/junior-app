@@ -1,6 +1,8 @@
 import Select from 'react-select'
 import * as C from './style'
 import Header from '../../components/header'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../store/index'
 function CreateProject() {
   const options = [
     { value: 'chocolate', label: 'Chocolate' },
@@ -18,7 +20,8 @@ function CreateProject() {
       width: '100%',
     }),
   }
-
+  const user = useSelector<RootState>((state) => state.user)
+  console.log(user)
   return (
     <>
       <Header />
