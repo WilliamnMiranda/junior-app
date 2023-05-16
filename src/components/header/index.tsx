@@ -36,9 +36,9 @@ function Header() {
               <C.ItemList>Competições</C.ItemList>
             </NavLink>
           </C.ContainerLinkRouter>
-          <C.ContainerUser>
+          <NavLink to="/login">
             <C.ButtonLogin> ENTRAR </C.ButtonLogin>
-          </C.ContainerUser>
+          </NavLink>
         </C.List>
       </C.Navigation>
     </C.ContainerHeader>
