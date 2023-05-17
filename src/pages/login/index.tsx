@@ -1,41 +1,10 @@
-import { useEffect, useState } from 'react'
 import Header from '../../components/header'
 import * as C from './style'
-import { useMutation, useQuery } from '@tanstack/react-query'
-import userServices from '../../services/userService'
-import { useDispatch, useSelector } from 'react-redux'
-import { login } from '../../store/slices/userSlice'
 import { Navigate, useNavigate } from 'react-router-dom'
-import { RootState } from '../../store'
+import { useLogin } from '../../hooks/useLogin'
 const Login = () => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const { setEmail, setPassword, submit, isSuccess, isLoading } = useLogin()
 
-  const { data, isLoading, isSuccess } = useQuery({
-    queryKey: ['auth'],
-    queryFn: () => userServices.auth(),
-  })
-
-  const navigate = useNavigate()
-  const dispatch = useDispatch()
-  const user: any = useSelector<RootState>((state) => state.user)
-  const mutation = useMutation((data: any) => userServices.login(data), {
-    onSuccess: (data) => {
-      dispatch(login(data))
-      navigate('/')
-    },
-  })
-
-  useEffect(() => {
-    if (data) {
-      navigate('/')
-    }
-  }, [isLoading])
-  const submit = (e: React.FormEvent) => {
-    e.preventDefault()
-    const data = { email, password }
-    mutation.mutate(data)
-  }
   return isLoading ? (
     <div>carregando</div>
   ) : isSuccess ? (
