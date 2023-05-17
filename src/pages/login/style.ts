@@ -5,7 +5,7 @@ export const ContainerScreenLogin = styled.div`
   height: 100vh;
   overflow: hidden;
 `
-export const ContainerLogin = styled.div`
+export const ContainerLogin = styled.form`
   height: 100%;
   width: 100%;
   display: flex;

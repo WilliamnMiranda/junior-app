@@ -5,7 +5,7 @@ import { authenticate } from '../store/slices/userSlice'
 export const useAuth = () => {
   const dispatch = useDispatch()
   const { data, isLoading } = useQuery({
-    queryKey: ['collections'],
+    queryKey: ['auth'],
     queryFn: () => userServices.auth(),
   })
 

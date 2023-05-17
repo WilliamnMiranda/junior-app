@@ -21,7 +21,6 @@ function CreateProject() {
     }),
   }
   const user = useSelector<RootState>((state) => state.user)
-  console.log(user)
   return (
     <>
       <Header />

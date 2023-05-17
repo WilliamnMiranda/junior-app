@@ -15,8 +15,10 @@ const userSlice = createSlice({
       return {
         ...state,
         name: payload.name,
-        registry: payload.registry,
+        email: payload.email,
+        cpf: payload.cpf,
         token: payload.token,
+        _id: payload._id,
         authenticate: true,
       }
     },
