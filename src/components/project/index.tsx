@@ -17,7 +17,6 @@ interface IProject {
 }
 function Project({ project }: IProject) {
   const language = languages[project.coreTechnology.toString()]
-  console.log(language.color)
   return (
     <C.ContainerProject>
       <C.ContainerImageProject color={language.color}>

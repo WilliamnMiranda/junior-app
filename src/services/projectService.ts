@@ -5,9 +5,9 @@ const projectServices = {
       await api.post('/project/create', data)
     ).data
   },
-  auth: async () => {
+  recents: async () => {
     return await (
-      await api.post('/user/auth')
+      await api.get('/project/recent')
     ).data
   },
 }
