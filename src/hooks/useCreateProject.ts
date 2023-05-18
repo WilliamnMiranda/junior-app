@@ -1,32 +1,45 @@
 import { useState } from 'react'
 import { api } from '../helpers/api'
-import { useQuery } from '@tanstack/react-query'
+import { useMutation, useQuery } from '@tanstack/react-query'
+import projectServices from '../services/projectService'
+import { useNavigate } from 'react-router-dom'
 
 export const useCreateProject = () => {
   const [name, setName] = useState('')
-  const [linkedin, setLinkedin] = useState('')
+  const [ownerLinkedin, setOwnerLinkedin] = useState('')
   const [description, setDescription] = useState('')
   const [level, setLevel] = useState('')
-  const [tech, setTechs] = useState([])
+  const [technologies, setTechnologies] = useState([])
   const [functions, setFunctions] = useState([])
+  const [coreTechnology, setCoreTechnology] = useState('')
+  const navigate = useNavigate()
 
-  const { data: options, isLoading } = useQuery({
-    queryKey: ['options'],
-    queryFn: () => api.get('/options'),
+  const mutation = useMutation((data: any) => projectServices.create(data), {
+    onSuccess: (data) => {
+      navigate('/')
+    },
   })
 
-  console.log(options, isLoading)
   const createProject = () => {
-    const data = {}
+    const data = {
+      name,
+      technologies,
+      description,
+      coreTechnology,
+      ownerLinkedin,
+      level,
+    }
+    mutation.mutate(data)
   }
 
   return {
     setName,
     setLevel,
-    setTechs,
+    setTechnologies,
     setDescription,
     setFunctions,
-    setLinkedin,
+    setOwnerLinkedin,
     createProject,
+    setCoreTechnology,
   }
 }

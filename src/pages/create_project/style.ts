@@ -16,7 +16,7 @@ export const HeaderCreateJob = styled.div`
   font-family: 'Inter', sans-serif;
 `
 
-export const ContainerInfosProject = styled.div`
+export const ContainerInfosProject = styled.form`
   padding: 20px;
   border: 1px solid #d6d6d6;
   border-radius: 10px;

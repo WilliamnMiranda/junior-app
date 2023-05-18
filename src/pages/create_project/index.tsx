@@ -4,11 +4,15 @@ import Header from '../../components/header'
 import { useCreateProject } from '../../hooks/useCreateProject'
 function CreateProject() {
   const options = [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' },
+    { value: 'php', label: 'Php' },
+    { value: 'angularjs', label: 'Angular' },
+    { value: 'java', label: 'Java' },
   ]
-
+  const level = [
+    { value: 'junior', label: 'junior' },
+    { value: 'pleno', label: 'pleno' },
+    { value: 'senior', label: 'senior' },
+  ]
   const customStyles = {
     control: (provided: any) => ({
       ...provided,
@@ -19,13 +23,27 @@ function CreateProject() {
       width: '100%',
     }),
   }
-  const { setLevel, setName, setTechs, setFunctions, setDescription, setLinkedin } = useCreateProject()
+  const {
+    setLevel,
+    setName,
+    setTechnologies,
+    setFunctions,
+    setDescription,
+    setOwnerLinkedin,
+    setCoreTechnology,
+    createProject,
+  } = useCreateProject()
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    createProject()
+  }
   return (
     <>
       <Header />
       <C.HeaderCreateJob> CRIAR UM NOVO PROJETO </C.HeaderCreateJob>
       <C.ContainerCreateProject>
-        <C.ContainerInfosProject>
+        <C.ContainerInfosProject onSubmit={handleSubmit}>
           <C.ContainerOneInput>
             <C.ContainerInfo>
               <C.Label>Nome do projeto</C.Label>
@@ -36,7 +54,7 @@ function CreateProject() {
             <C.ContainerInfoTwoInputs>
               <C.Label>Nivel de experiencia requerido</C.Label>
               <Select
-                options={options}
+                options={level}
                 styles={customStyles}
                 onChange={(newValue) => {
                   if (newValue) {
@@ -69,7 +87,7 @@ function CreateProject() {
           <C.ContainerOneInput style={{ marginTop: '20px' }}>
             <C.ContainerInfo>
               <C.Label>Link do Perfil do linkedin</C.Label>
-              <C.Input onChange={(e) => setLinkedin(e.target.value)} />
+              <C.Input onChange={(e) => setOwnerLinkedin(e.target.value)} />
             </C.ContainerInfo>
           </C.ContainerOneInput>
           <C.ContainerTwoInputs>
@@ -81,9 +99,9 @@ function CreateProject() {
                 onChange={(newValue) => {
                   if (newValue) {
                     const { value } = newValue
-                    setLevel(value)
+                    setCoreTechnology(value)
                   } else {
-                    setLevel('')
+                    setCoreTechnology('')
                   }
                 }}
               />
@@ -98,9 +116,9 @@ function CreateProject() {
                 onChange={(selectedOptions: any) => {
                   if (selectedOptions) {
                     const selectedValues = selectedOptions.map((option: any) => option.value)
-                    setTechs(selectedValues)
+                    setTechnologies(selectedValues)
                   } else {
-                    setTechs([])
+                    setTechnologies([])
                   }
                 }}
               />
