@@ -3,8 +3,12 @@ import React, { useState } from 'react'
 import * as C from './style.tsx'
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
 import useHeader from '../../hooks/useHeader.ts'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../store/index.tsx'
 function Header() {
-  const { statusMenu, setStatusMenu, toggleMenu } = useHeader()
+  const { statusMenu, setStatusMenu } = useHeader()
+  const user: any = useSelector<RootState>((state) => state.user)
+  console.log(user)
   return (
     <C.ContainerHeader>
       <C.ContainerIconsAndLogoMobile>

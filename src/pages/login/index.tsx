@@ -5,9 +5,7 @@ import { useLogin } from '../../hooks/useLogin'
 const Login = () => {
   const { setEmail, setPassword, submit, isSuccess, isLoading } = useLogin()
 
-  return isLoading ? (
-    <div>carregando</div>
-  ) : isSuccess ? (
+  return isSuccess ? (
     <Navigate to="/" />
   ) : (
     <C.ContainerScreenLogin>

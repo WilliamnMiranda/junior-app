@@ -6,8 +6,8 @@ interface IPrivateRoute {
   element: FunctionComponent
 }
 function PrivateRoute({ element: Element }: IPrivateRoute) {
-  const { data, isLoading } = useAuth()
-  return isLoading ? <div>carregando</div> : data ? <Element /> : <Navigate to="/login" replace={true} />
+  const { data, isSuccess } = useAuth()
+  return isSuccess ? <Element /> : <Navigate to="/login" replace={true} />
 }
 
 export default PrivateRoute

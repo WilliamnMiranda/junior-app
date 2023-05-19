@@ -15,6 +15,7 @@ export const useLogin = () => {
   const { data, isLoading, isSuccess } = useQuery({
     queryKey: ['auth'],
     queryFn: () => userServices.auth(),
+    retry: false,
   })
 
   const mutation = useMutation((data: any) => userServices.login(data), {
