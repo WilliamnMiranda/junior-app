@@ -2,12 +2,14 @@ import Select from 'react-select'
 import * as C from './style'
 import Header from '../../components/header'
 import { useCreateProject } from '../../hooks/useCreateProject'
+import { useQuery } from '@tanstack/react-query'
+import languagesServices from '../../services/languages'
 function CreateProject() {
-  const options = [
-    { value: 'php', label: 'Php' },
-    { value: 'angularjs', label: 'Angular' },
-    { value: 'java', label: 'Java' },
-  ]
+  const { data, isLoading } = useQuery({
+    queryKey: ['languages'],
+    queryFn: () => languagesServices.getAll(),
+  })
+  console.log(data)
   const level = [
     { value: 'junior', label: 'junior' },
     { value: 'pleno', label: 'pleno' },
@@ -71,7 +73,7 @@ function CreateProject() {
               <Select
                 closeMenuOnSelect={false}
                 isMulti
-                options={options}
+                options={data}
                 styles={customStyles}
                 onChange={(selectedOptions: any) => {
                   if (selectedOptions) {
@@ -94,7 +96,7 @@ function CreateProject() {
             <C.ContainerInfoTwoInputs>
               <C.Label>Tecnologia principal</C.Label>
               <Select
-                options={options}
+                options={data}
                 styles={customStyles}
                 onChange={(newValue) => {
                   if (newValue) {
@@ -111,12 +113,12 @@ function CreateProject() {
               <Select
                 closeMenuOnSelect={false}
                 isMulti
-                options={options}
+                options={data}
                 styles={customStyles}
-                onChange={(selectedOptions: any) => {
-                  if (selectedOptions) {
-                    const selectedValues = selectedOptions.map((option: any) => option.value)
-                    setTechnologies(selectedValues)
+                onChange={(newValue) => {
+                  if (newValue) {
+                    const { value } = newValue
+                    setTechnologies((currentValue) => [...currentValue, value])
                   } else {
                     setTechnologies([])
                   }
