@@ -8,7 +8,7 @@ import { RootState } from '../../store/index.tsx'
 function Header() {
   const { statusMenu, setStatusMenu } = useHeader()
   const user: any = useSelector<RootState>((state) => state.user)
-  console.log(user)
+  console.log(user.authenticate)
   return (
     <C.ContainerHeader>
       <C.ContainerIconsAndLogoMobile>
@@ -40,9 +40,13 @@ function Header() {
               <C.ItemList>Competições</C.ItemList>
             </NavLink>
           </C.ContainerLinkRouter>
-          <NavLink to="/login">
-            <C.ButtonLogin> ENTRAR </C.ButtonLogin>
-          </NavLink>
+          {user.authenticate ? (
+            <div>logado</div>
+          ) : (
+            <NavLink to="/login">
+              <C.ButtonLogin> ENTRAR </C.ButtonLogin>
+            </NavLink>
+          )}
         </C.List>
       </C.Navigation>
     </C.ContainerHeader>
