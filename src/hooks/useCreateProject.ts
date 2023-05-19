@@ -9,7 +9,7 @@ export const useCreateProject = () => {
   const [ownerLinkedin, setOwnerLinkedin] = useState('')
   const [description, setDescription] = useState('')
   const [level, setLevel] = useState('')
-  const [technologies, setTechnologies] = useState([])
+  const [technologies, setTechnologies] = useState<String[]>([])
   const [functions, setFunctions] = useState([])
   const [coreTechnology, setCoreTechnology] = useState('')
   const navigate = useNavigate()
