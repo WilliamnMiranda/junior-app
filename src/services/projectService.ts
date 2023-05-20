@@ -10,6 +10,11 @@ const projectServices = {
       await api.get('/project/recent')
     ).data
   },
+  getOne: async (id: string) => {
+    return await (
+      await api.get(`/project/${id}`)
+    ).data
+  },
 }
 
 export default projectServices

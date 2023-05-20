@@ -3,7 +3,7 @@ import * as C from './style'
 
 interface ITypes {
   url: string
-  name: String
+  name?: String
 }
 function Types({ url, name }: ITypes) {
   return (

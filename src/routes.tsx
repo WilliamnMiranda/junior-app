@@ -4,6 +4,7 @@ import HomePage from './pages/home'
 import CreateProject from './pages/create_project'
 import Login from './pages/login'
 import PrivateRoute from './components/PrivateRoute'
+import ProjectScreen from './pages/project'
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: '/login',
     element: <Login />,
+  },
+  {
+    path: '/project/:id',
+    element: <PrivateRoute element={ProjectScreen} />,
   },
 ])
 
