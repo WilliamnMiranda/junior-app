@@ -2,6 +2,7 @@ import styled from 'styled-components'
 export const ContainerScreenProject = styled.div`
   height: 100vh;
   background-color: #f7f9fa;
+  overflow: hidden;
 `
 export const ContainerDivider = styled.section`
   padding: 0 320px;
@@ -10,10 +11,12 @@ export const ContainerDivider = styled.section`
   margin-top: 20px;
   height: calc(100vh - 120px);
 `
-export const ContainerIndication = styled.section``
+export const ContainerIndication = styled.section`
+  width: 40%;
+`
 export const ContainerProject = styled.section`
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.12);
-  width: 70%;
+  width: 60%;
   height: calc(100vh - 120px);
   padding: 20px;
   background-color: white;
