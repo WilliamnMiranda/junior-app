@@ -40,7 +40,7 @@ const ProjectScreen = () => {
               <C.TitleInfo>Linguagems utilizadas </C.TitleInfo>
               <C.ResponseInfoTechs>
                 {data?.technologies.map((tech: string) => {
-                  const icon = languages[tech?.toString()].icon
+                  const icon = tech && languages[tech]?.icon
                   return <Type url={icon} />
                 })}
               </C.ResponseInfoTechs>

@@ -115,13 +115,11 @@ function CreateProject() {
                 isMulti
                 options={data}
                 styles={customStyles}
-                onChange={(newValue) => {
-                  if (newValue) {
-                    const { value } = newValue
-                    setTechnologies((currentValue) => [...currentValue, value])
-                  } else {
-                    setTechnologies([])
-                  }
+                onChange={(currentValue) => {
+                  const newValue = currentValue.map((item: any) => item.value)
+                  if (newValue.length > 0) {
+                    setTechnologies(newValue)
+                  } else setTechnologies([])
                 }}
               />
             </C.ContainerInfoTwoInputs>
