@@ -70,6 +70,7 @@ export const ContainerDescription = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 30px;
+  width: 100%;
 `
 export const TittleDescription = styled.h3`
   font-family: 'Inter', sans-serif;
@@ -79,6 +80,8 @@ export const TittleDescription = styled.h3`
 export const Description = styled.p`
   font-family: 'Inter', sans-serif;
   font-size: 1.2em;
+  margin-top: 5px;
+  word-wrap: break-word;
 `
 
 export const ContainerButtons = styled.div`

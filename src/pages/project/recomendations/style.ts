@@ -15,7 +15,7 @@ export const Project = styled.div`
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 7px;
   width: 100%;
-  height: 150px;
+  height: 130px;
   display: flex;
   padding: 10px;
   background-color: white;
@@ -43,7 +43,7 @@ export const ContainerLevel = styled.div`
   gap: 5px;
   p {
     position: relative;
-    top: -10%;
+    top: -8%;
   }
 `
 
@@ -63,12 +63,14 @@ export const ResponseInfoTechs = styled.p`
 export const TitleInfo = styled.h3`
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
-  font-size: 0.9em;
+  font-size: 0.8em;
   text-transform: uppercase;
 `
 export const ContainerIcons = styled.div`
   display: flex;
   gap: 10px;
+  overflow: hidden;
+  padding: 5px;
 `
 export const ResponseInfo = styled.p`
   font-family: 'Inter', sans-serif;
