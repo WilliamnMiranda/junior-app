@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import { api } from '../helpers/api'
-import { useMutation, useQuery } from '@tanstack/react-query'
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import projectServices from '../services/projectService'
 import { useNavigate } from 'react-router-dom'
 
 export const useCreateProject = () => {
+  const queryClient = useQueryClient()
   const [name, setName] = useState('')
   const [ownerLinkedin, setOwnerLinkedin] = useState('')
   const [description, setDescription] = useState('')
@@ -16,6 +17,7 @@ export const useCreateProject = () => {
   console.log(technologies)
   const mutation = useMutation((data: any) => projectServices.create(data), {
     onSuccess: (data) => {
+      queryClient.invalidateQueries({ queryKey: ['projects_recents'] })
       navigate('/')
     },
   })

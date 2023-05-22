@@ -30,7 +30,7 @@ const HomePage = () => {
       <C.PopularTypes>
         <C.TittlePopularLanguages>Linguagems populares </C.TittlePopularLanguages>
         <C.ContainerIconsLanguages>
-          {popularLanguages.map((item) => {
+          {popularLanguages?.map((item) => {
             return (
               <>
                 <C.ContainerIcon>
