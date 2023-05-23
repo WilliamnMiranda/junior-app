@@ -5,6 +5,7 @@ import CreateProject from './pages/create_project'
 import Login from './pages/login'
 import PrivateRoute from './components/PrivateRoute'
 import ProjectScreen from './pages/project'
+import SearchProject from './pages/search_project'
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: '/project/:id',
     element: <PrivateRoute element={ProjectScreen} />,
+  },
+  {
+    path: '/search',
+    element: <SearchProject />,
   },
 ])
 

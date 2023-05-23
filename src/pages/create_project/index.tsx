@@ -99,9 +99,10 @@ function CreateProject() {
                 options={data}
                 styles={customStyles}
                 onChange={(newValue) => {
+                  console.log(newValue)
                   if (newValue) {
-                    const { value } = newValue
-                    setCoreTechnology(value)
+                    const value = newValue as { value: string; label: string }
+                    setCoreTechnology(value.value)
                   } else {
                     setCoreTechnology('')
                   }

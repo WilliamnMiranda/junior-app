@@ -33,7 +33,7 @@ function Header() {
             <NavLink to="/create/project">
               <C.ItemList>Criar um Projeto</C.ItemList>
             </NavLink>
-            <NavLink to="/">
+            <NavLink to="/search">
               <C.ItemList>Encontrar um projeto</C.ItemList>
             </NavLink>
             <NavLink to="/">
