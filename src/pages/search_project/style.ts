@@ -3,17 +3,18 @@ import styled from 'styled-components'
 export const ContainerSearchProject = styled.div`
   width: 100%;
   background-color: #f7f9fa;
+  overflow: hidden;
 `
 export const ContainerInfos = styled.div`
-  padding: 0 320px;
   margin-top: 20px;
+  padding: 0px 30px;
   display: flex;
-  gap: 10px;
+  gap: 50px;
   height: calc(100vh - 100px);
 `
 
 export const ContainerFilter = styled.section`
-  width: 30%;
+  width: 20%;
   background-color: white;
   position: sticky;
   top: 75px;
@@ -23,13 +24,12 @@ export const ContainerFilter = styled.section`
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  align-self: flex-start;
 `
 
 export const ContainerList = styled.section`
   width: 70%;
-  background-color: red;
   height: calc(100vh - 100px);
-  overflow-x: auto;
 `
 export const ContainerTeste = styled.div``
 
@@ -49,4 +49,34 @@ export const ContainerOptions = styled.div`
 export const ButtonSubmit = styled.button`
   width: 100%;
   height: 40px;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  background-color: rgb(13, 149, 225);
+  color: white;
+`
+export const ContainerListProjects = styled.div`
+  width: 100%;
+  height: 90%;
+  padding: 20px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  overflow-x: auto;
+  ::-webkit-scrollbar {
+    width: 15px;
+  }
+  ::-webkit-scrollbar-track {
+    width: 15px;
+    background-color: white;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(92, 202, 232); /* color of the scroll thumb */
+  }
+`
+export const TittleList = styled.h3`
+  color: rgb(86, 86, 86);
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  font-size: 1.4em;
 `

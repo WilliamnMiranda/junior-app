@@ -4,6 +4,8 @@ import * as C from './style'
 import Select from 'react-select'
 import { useQuery } from '@tanstack/react-query'
 import languagesServices from '../../services/languages'
+import Project from '../../components/filterComponent'
+import projectServices from '../../services/projectService'
 function SearchProject() {
   const [levell, setLevel] = useState('')
   const [coreTech, setCoreTech] = useState('')
@@ -11,6 +13,10 @@ function SearchProject() {
   const { data, isLoading } = useQuery({
     queryKey: ['languages'],
     queryFn: () => languagesServices.getAll(),
+  })
+  const { data: p, isLoading: s } = useQuery({
+    queryKey: ['projects_recents'],
+    queryFn: () => projectServices.recents(),
   })
   const level = [
     { value: 'junior', label: 'junior' },
@@ -85,8 +91,21 @@ function SearchProject() {
             </C.ContainerOptions>
           </C.ContainerOptionFilter>
           <C.ContainerOptionFilter>
-            <C.TittleInfo>Nivel de experiencia</C.TittleInfo>
-            <C.ContainerOptions></C.ContainerOptions>
+            <C.TittleInfo>Funcao</C.TittleInfo>
+            <C.ContainerOptions>
+              <Select
+                closeMenuOnSelect={false}
+                isMulti
+                options={data}
+                styles={customStyles}
+                onChange={(currentValue) => {
+                  const newValue = currentValue.map((item: any) => item.value)
+                  if (newValue.length > 0) {
+                    setTechnologies(newValue)
+                  } else setTechnologies([])
+                }}
+              />
+            </C.ContainerOptions>
           </C.ContainerOptionFilter>
           <C.ContainerOptionFilter>
             <C.TittleInfo>Nivel de experiencia</C.TittleInfo>
@@ -101,7 +120,12 @@ function SearchProject() {
         </C.ContainerFilter>
 
         <C.ContainerList>
-          <C.ContainerTeste></C.ContainerTeste>
+          <C.TittleList>Listagem de projetos</C.TittleList>
+          <C.ContainerListProjects>
+            {p?.map((project: any) => {
+              return <Project project={project} />
+            })}
+          </C.ContainerListProjects>
         </C.ContainerList>
       </C.ContainerInfos>
     </C.ContainerSearchProject>
