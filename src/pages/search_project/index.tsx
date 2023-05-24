@@ -1,28 +1,18 @@
-import { useState } from 'react'
+import { level } from '../../utils/project'
 import Header from '../../components/header'
 import * as C from './style'
 import Select from 'react-select'
 import { useQuery } from '@tanstack/react-query'
-import languagesServices from '../../services/languages'
 import Project from '../../components/filterComponent'
 import projectServices from '../../services/projectService'
+import { useFilter } from '../../hooks/useFilter'
 function SearchProject() {
-  const [levell, setLevel] = useState('')
-  const [coreTech, setCoreTech] = useState('')
-  const [technologies, setTechnologies] = useState<String[]>([])
   const { data, isLoading } = useQuery({
-    queryKey: ['languages'],
-    queryFn: () => languagesServices.getAll(),
-  })
-  const { data: p, isLoading: s } = useQuery({
     queryKey: ['projects_recents'],
     queryFn: () => projectServices.recents(),
   })
-  const level = [
-    { value: 'junior', label: 'junior' },
-    { value: 'pleno', label: 'pleno' },
-    { value: 'senior', label: 'senior' },
-  ]
+
+  const { setLevel, languages, setCoreTechnology, setTechnologies } = useFilter()
   const customStyles = {
     control: (provided: any) => ({
       ...provided,
@@ -59,15 +49,15 @@ function SearchProject() {
             <C.TittleInfo>Principal tecnologia</C.TittleInfo>
             <C.ContainerOptions>
               <Select
-                options={data}
+                options={languages}
                 styles={customStyles}
                 onChange={(newValue) => {
                   console.log(newValue)
                   if (newValue) {
                     const value = newValue as { value: string; label: string }
-                    setCoreTech(value.value)
+                    setCoreTechnology(value.value)
                   } else {
-                    setCoreTech('')
+                    setCoreTechnology('')
                   }
                 }}
               />
@@ -79,7 +69,7 @@ function SearchProject() {
               <Select
                 closeMenuOnSelect={false}
                 isMulti
-                options={data}
+                options={languages}
                 styles={customStyles}
                 onChange={(currentValue) => {
                   const newValue = currentValue.map((item: any) => item.value)
@@ -96,7 +86,7 @@ function SearchProject() {
               <Select
                 closeMenuOnSelect={false}
                 isMulti
-                options={data}
+                options={languages}
                 styles={customStyles}
                 onChange={(currentValue) => {
                   const newValue = currentValue.map((item: any) => item.value)
@@ -122,7 +112,7 @@ function SearchProject() {
         <C.ContainerList>
           <C.TittleList>Listagem de projetos</C.TittleList>
           <C.ContainerListProjects>
-            {p?.map((project: any) => {
+            {data?.map((project: any) => {
               return <Project project={project} />
             })}
           </C.ContainerListProjects>

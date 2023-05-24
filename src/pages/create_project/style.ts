@@ -2,6 +2,15 @@ import styled from 'styled-components'
 
 export const ContainerCreateProject = styled.div`
   padding: 0 100px;
+  @media (max-width: 1480px) {
+    padding: 0 50px;
+  }
+  @media (max-width: 925px) {
+    padding: 0 5px;
+  }
+  @media (max-width: 768px) {
+    padding: 10px 20px;
+  }
 `
 export const HeaderCreateJob = styled.div`
   display: flex;
@@ -28,6 +37,9 @@ export const ContainerTwoInputs = styled.div`
   display: flex;
   gap: 20px;
   margin-top: 20px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `
 export const ContainerInfo = styled.div`
   display: flex;
@@ -39,6 +51,9 @@ export const ContainerInfoTwoInputs = styled.div`
   flex-direction: column;
   gap: 15px;
   width: 50%;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `
 export const Label = styled.label`
   font-size: 1.2em;
