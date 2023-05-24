@@ -7,10 +7,10 @@ export const useAuth = () => {
   const { data, isLoading, isSuccess } = useQuery({
     queryKey: ['auth'],
     queryFn: () => userServices.auth(),
-    retry: false,
   })
-
-  if (!isLoading && data) dispatch(authenticate(data))
+  if (!isLoading && data) {
+    dispatch(authenticate(data))
+  }
 
   return {
     data,

@@ -6,6 +6,7 @@ import Login from './pages/login'
 import PrivateRoute from './components/PrivateRoute'
 import ProjectScreen from './pages/project'
 import SearchProject from './pages/search_project'
+import Dashboard from './pages/dashboard'
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: '/search',
     element: <SearchProject />,
+  },
+  {
+    path: '/dashboard',
+    element: <PrivateRoute element={Dashboard} />,
   },
 ])
 

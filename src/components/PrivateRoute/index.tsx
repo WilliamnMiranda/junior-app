@@ -7,6 +7,7 @@ interface IPrivateRoute {
 }
 function PrivateRoute({ element: Element }: IPrivateRoute) {
   const { data, isSuccess } = useAuth()
+  console.log(isSuccess + 'aaaaaaaaaaa')
   return isSuccess ? <Element /> : <Navigate to="/login" replace={true} />
 }
 

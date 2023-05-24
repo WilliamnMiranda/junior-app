@@ -4,6 +4,9 @@ export const ContainerSearchProject = styled.div`
   width: 100%;
   background-color: #f7f9fa;
   overflow: hidden;
+  @media (max-width: 1480px) {
+    overflow: auto;
+  }
 `
 export const ContainerInfos = styled.div`
   margin-top: 20px;
@@ -11,6 +14,9 @@ export const ContainerInfos = styled.div`
   display: flex;
   gap: 50px;
   height: calc(100vh - 100px);
+  @media (max-width: 1480px) {
+    flex-direction: column;
+  }
 `
 
 export const ContainerFilter = styled.section`
@@ -25,11 +31,18 @@ export const ContainerFilter = styled.section`
   display: flex;
   flex-direction: column;
   align-self: flex-start;
+  @media (max-width: 1480px) {
+    width: 100%;
+  }
 `
 
 export const ContainerList = styled.section`
   width: 70%;
   height: calc(100vh - 100px);
+  @media (max-width: 1480px) {
+    width: 100%;
+    height: auto;
+  }
 `
 export const ContainerTeste = styled.div``
 
@@ -72,6 +85,10 @@ export const ContainerListProjects = styled.div`
   }
   ::-webkit-scrollbar-thumb {
     background-color: rgb(92, 202, 232); /* color of the scroll thumb */
+  }
+  @media (max-width: 1480px) {
+    overflow: hidden;
+    height: auto;
   }
 `
 export const TittleList = styled.h3`
