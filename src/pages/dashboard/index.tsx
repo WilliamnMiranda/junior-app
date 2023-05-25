@@ -1,7 +1,12 @@
 import React from 'react'
-
+import * as C from './style'
+import LayoutDashboard from './layout'
 const Dashboard = () => {
-  return <div>aa</div>
+  return (
+    <LayoutDashboard>
+      <C.ContainerHeader></C.ContainerHeader>
+    </LayoutDashboard>
+  )
 }
 
 export default Dashboard
