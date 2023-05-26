@@ -110,6 +110,7 @@ export const ContainerParticipants = styled.div`
   display: flex;
   gap: 2px;
 `
+export const ContainerTechs = styled.div``
 export const Participant = styled.span`
   width: 20px;
   height: 20px;

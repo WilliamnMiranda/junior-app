@@ -11,8 +11,6 @@ const HomePage = () => {
     queryKey: ['projects_recents'],
     queryFn: () => projectServices.recents(),
   })
-
-  console.log(data, isLoading)
   return (
     <C.ContainerHomePage>
       <Header />

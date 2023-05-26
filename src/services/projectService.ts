@@ -15,6 +15,11 @@ const projectServices = {
       await api.get(`/project/${id}`)
     ).data
   },
+  getAll: async () => {
+    return await (
+      await api.get(`/project/user`)
+    ).data
+  },
 }
 
 export default projectServices
