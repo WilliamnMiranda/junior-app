@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const ContainerProject = styled.article`
   display: flex;
-  height: 140px;
+  height: 100px;
   background-color: white;
   padding: 10px;
   border-radius: 10px;
@@ -41,7 +41,9 @@ export const TittleProject = styled.h3`
   text-transform: uppercase;
   color: rgb(86, 86, 86);
 `
-export const ContainerTechs = styled.div``
+export const ContainerTechs = styled.div`
+  margin: 3px;
+`
 
 export const TextTechnologies = styled.p`
   font-family: 'Roboto', sans-serif;
@@ -55,36 +57,19 @@ export const ContainerLanguages = styled.div`
   flex-wrap: wrap;
   gap: 9px;
   align-items: center;
+  margin-top: 3px;
 `
-export const ContainerViewsAndParticipants = styled.section`
+export const ContainerIcons = styled.section`
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
-  font-size: 0.9em;
   display: flex;
+  align-items: center;
+  gap: 10px;
   justify-content: space-between;
   svg {
     width: 20px;
     height: 20px;
+    cursor: pointer;
   }
 `
-export const ButtonViewProject = styled.button`
-  height: 11%;
-  color: white;
-  font-weight: 400;
-  background-color: rgb(13, 149, 225);
-  font-family: 'Roboto', sans-serif;
-  width: 100%;
-  border: none;
-  cursor: pointer;
-`
-export const ContainerItemView = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-`
-export const ContainerInfos = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 5px;
-`
+export const ContainerItemView = styled.div``

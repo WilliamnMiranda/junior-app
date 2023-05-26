@@ -2,7 +2,8 @@ import React from 'react'
 import * as C from './style'
 import languages from '../../../../utils/languages'
 import Type from '../../../../components/type'
-import { AiFillEye, AiFillHeart } from 'react-icons/ai'
+import { AiFillEye, AiOutlineCloseCircle } from 'react-icons/ai'
+import { MdModeEdit } from 'react-icons/md'
 
 interface IProps {
   project: any
@@ -26,17 +27,18 @@ function Project({ project }: IProps) {
             ))}
           </C.ContainerLanguages>
         </C.ContainerTechs>
-        <C.ContainerViewsAndParticipants>
-          <C.ContainerInfos>
-            <C.ContainerItemView>
-              <AiFillHeart /> 20
-            </C.ContainerItemView>
-            <C.ContainerItemView>
-              <AiFillEye /> 12
-            </C.ContainerItemView>
-          </C.ContainerInfos>
-        </C.ContainerViewsAndParticipants>
       </C.ContainerInfo>
+      <C.ContainerIcons>
+        <C.ContainerItemView>
+          <AiFillEye />
+        </C.ContainerItemView>
+        <C.ContainerItemView>
+          <MdModeEdit />
+        </C.ContainerItemView>
+        <C.ContainerItemView>
+          <AiOutlineCloseCircle />
+        </C.ContainerItemView>
+      </C.ContainerIcons>
     </C.ContainerProject>
   )
 }
