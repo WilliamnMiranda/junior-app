@@ -19,5 +19,21 @@ export const Aside = styled.aside`
   height: 100%;
   top: 0px;
   position: sticky;
+  display: flex;
+  flex-direction: column;
   top: 0px;
+  padding: 20px 0px;
+`
+export const ItemAside = styled.a`
+  padding: 20px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: uppercase;
+  svg {
+    font-size: 1.3em;
+  }
 `
