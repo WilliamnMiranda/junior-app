@@ -8,6 +8,7 @@ import { RootState } from '../../store/index.tsx'
 function Header() {
   const { statusMenu, setStatusMenu } = useHeader()
   const user: any = useSelector<RootState>((state) => state.user)
+  console.log(user)
   return (
     <C.ContainerHeader>
       <C.ContainerIconsAndLogoMobile>
