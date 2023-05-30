@@ -34,7 +34,7 @@ const userSlice = createSlice({
       }
     },
     logout(state) {
-      localStorage.removeItem('token')
+      localStorage.removeItem('team-token')
       return {
         ...state,
         name: '',

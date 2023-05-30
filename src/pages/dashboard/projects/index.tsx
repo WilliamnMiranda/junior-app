@@ -3,13 +3,14 @@ import LayoutDashboard from '../layout'
 import Project from './project'
 import { useQuery } from '@tanstack/react-query'
 import projectServices from '../../../services/projectService'
+import nodata from '../../../images/nodata.svg'
 const Projects = () => {
   const { data } = useQuery({
     queryKey: ['my_projects'],
     queryFn: () => projectServices.getAll(),
     retry: false,
   })
-  console.log(data)
+  const teste = []
   return (
     <LayoutDashboard>
       <C.ContainerProjects>
@@ -18,9 +19,14 @@ const Projects = () => {
             <C.Tittle> Meus Projetos</C.Tittle>
           </C.ContainerHeader>
           <C.ProjectsList>
-            {data?.map((project: any) => (
-              <Project project={project} />
-            ))}
+            {data?.length > 0 ? (
+              data?.map((project: any) => <Project project={project} />)
+            ) : (
+              <C.ContainerNoData>
+                <img src={nodata} />
+                <p>Voce nao tem projetos</p>
+              </C.ContainerNoData>
+            )}
           </C.ProjectsList>
         </C.ContainerProjectOwner>
 
@@ -28,6 +34,16 @@ const Projects = () => {
           <C.ContainerHeader>
             <C.Tittle> Projetos que participo</C.Tittle>
           </C.ContainerHeader>
+          <C.ProjectsList>
+            {data?.length > 0 ? (
+              <C.ContainerNoData>
+                <img src={nodata} />
+                <p>Voce nao participa de projetos</p>
+              </C.ContainerNoData>
+            ) : (
+              data?.map((project: any) => <Project project={project} />)
+            )}
+          </C.ProjectsList>
         </C.ContainerProjectParticipant>
       </C.ContainerProjects>
     </LayoutDashboard>

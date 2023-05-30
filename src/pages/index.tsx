@@ -1,9 +1,8 @@
 import { useQuery } from '@tanstack/react-query'
-import { useAuth } from '../hooks/useAuth.ts'
 import router from '../routes.tsx'
 import { RouterProvider } from 'react-router-dom'
 import userServices from '../services/userService.ts'
-import { authenticate } from '../store/slices/userSlice.ts'
+import { authenticate, logout } from '../store/slices/userSlice.ts'
 import { useDispatch } from 'react-redux'
 
 const Auth = () => {
@@ -13,6 +12,7 @@ const Auth = () => {
     queryFn: () => userServices.auth(),
     retry: false,
     onSuccess: (data) => dispatch(authenticate(data)),
+    onError: () => dispatch(logout()),
   })
 
   return <RouterProvider router={router} />

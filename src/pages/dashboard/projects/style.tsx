@@ -15,10 +15,13 @@ export const ContainerProjectOwner = styled.div`
   width: 50%;
   border-right: 1px solid rgba(0, 0, 0, 0.12);
   min-height: calc(100vh - 45px);
+  overflow: auto;
 `
 
 export const ContainerProjectParticipant = styled.div`
   width: 50%;
+  min-height: calc(100vh - 45px);
+  overflow: auto;
 `
 
 export const Tittle = styled.h3`
@@ -31,6 +34,28 @@ export const Tittle = styled.h3`
 `
 export const ProjectsList = styled.div`
   padding: 0px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
 `
 
 export const Project = styled.div``
+export const ContainerNoData = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  min-height: calc(100vh - 105px);
+  height: 100%;
+  p {
+    font-size: 2em;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    left: 30px;
+  }
+  img {
+    width: 200px;
+  }
+`
