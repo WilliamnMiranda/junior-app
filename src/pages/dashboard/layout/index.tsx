@@ -8,6 +8,7 @@ import {
   AiOutlineFire,
   AiOutlineBell,
 } from 'react-icons/ai'
+import { NavLink } from 'react-router-dom'
 interface IProps {
   children: ReactElement
 }
@@ -15,15 +16,21 @@ const LayoutDashboard = ({ children }: IProps) => {
   return (
     <C.Layout>
       <C.Aside>
-        <C.ItemAside>
-          <AiFillAppstore /> DASHBOARD
-        </C.ItemAside>
-        <C.ItemAside>
-          <AiOutlineFund /> Projetos
-        </C.ItemAside>
-        <C.ItemAside>
-          <AiOutlineSolution /> Inscricoes
-        </C.ItemAside>
+        <NavLink to="/dashboard">
+          <C.ItemAside>
+            <AiFillAppstore /> DASHBOARD
+          </C.ItemAside>
+        </NavLink>
+        <NavLink to="/dashboard/projects">
+          <C.ItemAside>
+            <AiOutlineFund /> Projetos
+          </C.ItemAside>
+        </NavLink>
+        <NavLink to="/dashboard/subscriptions">
+          <C.ItemAside>
+            <AiOutlineSolution /> Inscricoes
+          </C.ItemAside>
+        </NavLink>
         <C.ItemAside>
           <AiOutlineUser /> Perfil
         </C.ItemAside>

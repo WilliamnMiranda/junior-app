@@ -8,7 +8,7 @@ import ProjectScreen from './pages/project'
 import SearchProject from './pages/search_project'
 import Dashboard from './pages/dashboard'
 import Projects from './pages/dashboard/projects'
-
+import Subscriptions from './pages/dashboard/subscriptions'
 const router = createBrowserRouter([
   {
     path: '/',
@@ -37,6 +37,10 @@ const router = createBrowserRouter([
   {
     path: '/dashboard/projects',
     element: <PrivateRoute element={Projects} />,
+  },
+  {
+    path: '/dashboard/subscriptions',
+    element: <PrivateRoute element={Subscriptions} />,
   },
 ])
 
