@@ -12,6 +12,11 @@ const Projects = () => {
     queryFn: () => subscriptionServices.getAll(),
     retry: false,
   })
+  const myProject_data = useQuery({
+    queryKey: ['my_subscriptions'],
+    queryFn: () => subscriptionServices.getMySubscriptionsProject(),
+  })
+  console.log(myProject_data.data)
   return (
     <LayoutDashboard>
       <C.ContainerProjects>
@@ -20,13 +25,13 @@ const Projects = () => {
             <C.Tittle>Minhas inscricoes</C.Tittle>
           </C.ContainerHeader>
           <C.ProjectsList>
-            {data?.length > 0 ? (
+            {myProject_data.data?.length > 0 ? (
+              myProject_data.data?.map((subscription: any) => <Subscription subscription={subscription} type="my" />)
+            ) : (
               <C.ContainerNoData>
                 <img src={nodata} />
                 <p>Voce nao possui inscricoes</p>
               </C.ContainerNoData>
-            ) : (
-              data?.map((project: any) => <Project project={project} />)
             )}
           </C.ProjectsList>
         </C.ContainerProjectOwner>
@@ -37,7 +42,7 @@ const Projects = () => {
           </C.ContainerHeader>
           <C.ProjectsList>
             {data?.length > 0 ? (
-              data?.map((subscription: any) => <Subscription subscription={subscription} />)
+              data?.map((subscription: any) => <Subscription subscription={subscription} type="they" />)
             ) : (
               <C.ContainerNoData>
                 <img src={nodata} />
