@@ -52,7 +52,6 @@ function SearchProject() {
                 options={languages}
                 styles={customStyles}
                 onChange={(newValue) => {
-                  console.log(newValue)
                   if (newValue) {
                     const value = newValue as { value: string; label: string }
                     setCoreTechnology(value.value)

@@ -14,7 +14,6 @@ export const useCreateProject = () => {
   const [functions, setFunctions] = useState([])
   const [coreTechnology, setCoreTechnology] = useState('')
   const navigate = useNavigate()
-  console.log(technologies)
   const mutation = useMutation((data: any) => projectServices.create(data), {
     onSuccess: (data) => {
       queryClient.invalidateQueries({ queryKey: ['projects_recents'] })

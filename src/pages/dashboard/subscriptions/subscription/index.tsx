@@ -9,8 +9,6 @@ interface IProps {
 }
 
 function Subscription({ subscription, type }: IProps) {
-  console.log(subscription)
-
   const [level, setLevel] = useState('')
   return (
     <C.ContainerProject>

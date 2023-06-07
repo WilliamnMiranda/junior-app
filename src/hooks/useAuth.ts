@@ -11,8 +11,6 @@ export const useAuth = () => {
     retry: false,
   })
 
-  console.log(data, isLoading)
-
   if (!isLoading && data) {
     dispatch(authenticate(data))
   }

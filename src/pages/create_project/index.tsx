@@ -9,7 +9,6 @@ function CreateProject() {
     queryKey: ['languages'],
     queryFn: () => languagesServices.getAll(),
   })
-  console.log(data)
   const level = [
     { value: 'junior', label: 'junior' },
     { value: 'pleno', label: 'pleno' },
@@ -99,7 +98,6 @@ function CreateProject() {
                 options={data}
                 styles={customStyles}
                 onChange={(newValue) => {
-                  console.log(newValue)
                   if (newValue) {
                     const value = newValue as { value: string; label: string }
                     setCoreTechnology(value.value)

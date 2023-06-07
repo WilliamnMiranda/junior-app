@@ -1,4 +1,3 @@
-import React from 'react'
 import * as C from './style'
 import { useQuery } from '@tanstack/react-query'
 import projectServices from '../../../services/projectService'
@@ -13,7 +12,6 @@ function Recomendations() {
   return (
     <C.ContainerRecomendations>
       {data.map((project: any, index: number) => {
-        console.log(project)
         if (index < 3) {
           return (
             <C.Project>

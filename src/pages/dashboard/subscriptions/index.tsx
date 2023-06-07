@@ -16,7 +16,6 @@ const Projects = () => {
     queryKey: ['my_subscriptions'],
     queryFn: () => subscriptionServices.getMySubscriptionsProject(),
   })
-  console.log(myProject_data.data)
   return (
     <LayoutDashboard>
       <C.ContainerProjects>

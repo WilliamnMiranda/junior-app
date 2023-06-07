@@ -9,9 +9,7 @@ interface IProps {
   project: any
 }
 function Project({ project }: IProps) {
-  console.log(project)
   const language = languages[project.coreTechnology?.toString()]
-  console.log(language)
   return (
     <C.ContainerProject>
       <C.ContainerLogo>
