@@ -11,7 +11,9 @@ jest.mock('@tanstack/react-query', () => ({
 describe('', () => {
   test('', () => {
     ;(useQuery as jest.Mock).mockReturnValue({
-      data: [{ name: 'Project 1', technologies: ['angularjs'], level: 'junior', coreTechnology: 'angularjs' }],
+      data: [
+        { name: 'Project 1', technologies: ['angularjs'], level: 'junior', coreTechnology: 'angularjs', _id: '123' },
+      ],
     })
     const queryClient = new QueryClient()
     const screen = render(

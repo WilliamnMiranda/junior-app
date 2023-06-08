@@ -53,7 +53,7 @@ export const ContainerTittle = styled.h3`
   font-size: 1em;
   text-transform: uppercase;
 `
-export const ResponseInfoTechs = styled.p`
+export const ResponseInfoTechs = styled.div`
   font-family: 'Inter', sans-serif;
   font-size: 0.9em;
   display: flex;
