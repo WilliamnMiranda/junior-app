@@ -5,7 +5,7 @@ import languages from '../../../utils/languages'
 import Type from '../../../components/type'
 
 function Recomendations() {
-  const { data, isLoading } = useQuery({
+  const { data } = useQuery({
     queryKey: ['projects_recents'],
     queryFn: () => projectServices.recents(),
   })
@@ -21,11 +21,11 @@ function Recomendations() {
               <C.ContainerInfosProject>
                 <C.ContainerTittle>{project?.name}</C.ContainerTittle>
                 <C.ResponseInfoTechs>
-                  <C.TitleInfo>Linguagems utilizadas </C.TitleInfo>
+                  <C.TitleInfo>Linguagems utilizadas</C.TitleInfo>
                   <C.ContainerIcons>
                     {project?.technologies.map((tech: string) => {
                       const icon = languages[tech?.toString()].icon
-                      return <Type url={icon} />
+                      return <Type key={tech} url={icon} />
                     })}
                   </C.ContainerIcons>
                 </C.ResponseInfoTechs>
