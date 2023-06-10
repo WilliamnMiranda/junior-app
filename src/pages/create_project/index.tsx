@@ -48,7 +48,7 @@ function CreateProject() {
           <C.ContainerOneInput>
             <C.ContainerInfo>
               <C.Label>Nome do projeto</C.Label>
-              <C.Input onChange={(e) => setName(e.target.value)} />
+              <C.Input placeholder="Aplicativo de delivery" onChange={(e) => setName(e.target.value)} />
             </C.ContainerInfo>
           </C.ContainerOneInput>
           <C.ContainerTwoInputs>
@@ -88,7 +88,10 @@ function CreateProject() {
           <C.ContainerOneInput style={{ marginTop: '20px' }}>
             <C.ContainerInfo>
               <C.Label>Link do Perfil do linkedin</C.Label>
-              <C.Input onChange={(e) => setOwnerLinkedin(e.target.value)} />
+              <C.Input
+                placeholder="https://www.linkedin.com/in/myusername/"
+                onChange={(e) => setOwnerLinkedin(e.target.value)}
+              />
             </C.ContainerInfo>
           </C.ContainerOneInput>
           <C.ContainerTwoInputs>
@@ -126,7 +129,7 @@ function CreateProject() {
           <C.ContainerOneInput style={{ marginTop: '20px' }}>
             <C.ContainerInfo>
               <C.Label>Descricao do projeto</C.Label>
-              <C.InputDescription onChange={(e) => setDescription(e.target.value)} />
+              <C.InputDescription placeholder="O projeto ..." onChange={(e) => setDescription(e.target.value)} />
             </C.ContainerInfo>
           </C.ContainerOneInput>
           <C.ButtonSubmit> CRIAR </C.ButtonSubmit>
