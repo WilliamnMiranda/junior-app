@@ -1,5 +1,4 @@
 import { NavLink } from 'react-router-dom'
-import React, { useState } from 'react'
 import * as C from './style.tsx'
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
 import useHeader from '../../hooks/useHeader.ts'

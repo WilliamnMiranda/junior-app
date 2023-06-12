@@ -5,7 +5,7 @@ import { useCreateProject } from '../../hooks/useCreateProject'
 import { useQuery } from '@tanstack/react-query'
 import languagesServices from '../../services/languages'
 function CreateProject() {
-  const { data, isLoading } = useQuery({
+  const { data } = useQuery({
     queryKey: ['languages'],
     queryFn: () => languagesServices.getAll(),
   })
