@@ -48,7 +48,11 @@ function CreateProject() {
           <C.ContainerOneInput>
             <C.ContainerInfo>
               <C.Label>Nome do projeto</C.Label>
-              <C.Input placeholder="Aplicativo de delivery" onChange={(e) => setName(e.target.value)} />
+              <C.Input
+                placeholder="Aplicativo de delivery"
+                onChange={(e) => setName(e.target.value)}
+                data-testid="name"
+              />
             </C.ContainerInfo>
           </C.ContainerOneInput>
           <C.ContainerTwoInputs>
@@ -57,6 +61,8 @@ function CreateProject() {
               <Select
                 options={level}
                 styles={customStyles}
+                placeholder="Selecione seu nivel"
+                data-testid="level"
                 onChange={(newValue) => {
                   if (newValue) {
                     const { value } = newValue
@@ -98,8 +104,10 @@ function CreateProject() {
             <C.ContainerInfoTwoInputs>
               <C.Label>Tecnologia principal</C.Label>
               <Select
+                data-testid="ownerTech"
                 options={data}
                 styles={customStyles}
+                placeholder="Qual a tecnologia princpal"
                 onChange={(newValue) => {
                   if (newValue) {
                     const value = newValue as { value: string; label: string }
@@ -116,7 +124,9 @@ function CreateProject() {
                 closeMenuOnSelect={false}
                 isMulti
                 options={data}
+                placeholder="Tecnologias utilizadas no projeto"
                 styles={customStyles}
+                data-testid="techs"
                 onChange={(currentValue) => {
                   const newValue = currentValue.map((item: any) => item.value)
                   if (newValue.length > 0) {
@@ -129,7 +139,11 @@ function CreateProject() {
           <C.ContainerOneInput style={{ marginTop: '20px' }}>
             <C.ContainerInfo>
               <C.Label>Descricao do projeto</C.Label>
-              <C.InputDescription placeholder="O projeto ..." onChange={(e) => setDescription(e.target.value)} />
+              <C.InputDescription
+                data-testid="description"
+                placeholder="O projeto ..."
+                onChange={(e) => setDescription(e.target.value)}
+              />
             </C.ContainerInfo>
           </C.ContainerOneInput>
           <C.ButtonSubmit> CRIAR </C.ButtonSubmit>
