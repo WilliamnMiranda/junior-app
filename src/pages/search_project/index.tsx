@@ -6,8 +6,9 @@ import { useQuery } from '@tanstack/react-query'
 import Project from '../../components/filterComponent'
 import projectServices from '../../services/projectService'
 import { useFilter } from '../../hooks/useFilter'
+import { IProject } from '../../interfaces/project'
 function SearchProject() {
-  const { data, isLoading } = useQuery({
+  const { data } = useQuery({
     queryKey: ['projects_recents'],
     queryFn: () => projectServices.recents(),
   })
@@ -111,7 +112,7 @@ function SearchProject() {
         <C.ContainerList>
           <C.TittleList>Listagem de projetos</C.TittleList>
           <C.ContainerListProjects>
-            {data?.map((project: any) => {
+            {data?.map((project: IProject) => {
               return <Project project={project} />
             })}
           </C.ContainerListProjects>

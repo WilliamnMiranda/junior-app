@@ -1,6 +1,7 @@
 import { api } from '../helpers/api'
+import { UserDataLogin } from '../interfaces/user'
 const userServices = {
-  login: async (data: any) => {
+  login: async (data: UserDataLogin) => {
     return await (
       await api.post('/user/login', data)
     ).data

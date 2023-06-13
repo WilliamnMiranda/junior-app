@@ -4,13 +4,13 @@ import Project from './project'
 import { useQuery } from '@tanstack/react-query'
 import projectServices from '../../../services/projectService'
 import nodata from '../../../images/nodata.svg'
+import { IProject } from '../../../interfaces/project'
 const Projects = () => {
   const { data } = useQuery({
     queryKey: ['my_projects'],
     queryFn: () => projectServices.getAll(),
     retry: false,
   })
-  const teste = []
   return (
     <LayoutDashboard>
       <C.ContainerProjects>
@@ -20,7 +20,7 @@ const Projects = () => {
           </C.ContainerHeader>
           <C.ProjectsList>
             {data?.length > 0 ? (
-              data?.map((project: any) => <Project project={project} />)
+              data?.map((project: IProject) => <Project project={project} />)
             ) : (
               <C.ContainerNoData>
                 <img src={nodata} />
@@ -41,7 +41,7 @@ const Projects = () => {
                 <p>Voce nao participa de projetos</p>
               </C.ContainerNoData>
             ) : (
-              data?.map((project: any) => <Project project={project} />)
+              data?.map((project: IProject) => <Project project={project} />)
             )}
           </C.ProjectsList>
         </C.ContainerProjectParticipant>

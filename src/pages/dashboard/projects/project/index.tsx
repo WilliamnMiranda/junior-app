@@ -4,9 +4,10 @@ import languages from '../../../../utils/languages'
 import Type from '../../../../components/type'
 import { AiFillEye, AiOutlineCloseCircle } from 'react-icons/ai'
 import { MdModeEdit } from 'react-icons/md'
+import { IProject } from '../../../../interfaces/project'
 
 interface IProps {
-  project: any
+  project: IProject
 }
 function Project({ project }: IProps) {
   const language = languages[project.coreTechnology?.toString()]

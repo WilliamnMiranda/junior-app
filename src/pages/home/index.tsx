@@ -2,12 +2,12 @@ import { useQuery } from '@tanstack/react-query'
 import Header from '../../components/header'
 import Project from '../../components/project'
 import popularLanguages from '../../utils/popularLanguages'
-import projects from '../../utils/projects'
 import * as C from './style'
 import projectServices from '../../services/projectService'
+import { IProject } from '../../interfaces/project'
 
 const HomePage = () => {
-  const { data, isLoading } = useQuery({
+  const { data } = useQuery({
     queryKey: ['projects_recents'],
     queryFn: () => projectServices.recents(),
   })
@@ -43,7 +43,7 @@ const HomePage = () => {
       <C.ContainerRecentsProject>
         <C.TittlePopularLanguages> Projetos Recentes </C.TittlePopularLanguages>
         <C.ContainerProjects>
-          {data?.map((project: any) => {
+          {data?.map((project: IProject) => {
             return <Project project={project} />
           })}
         </C.ContainerProjects>

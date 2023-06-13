@@ -1,6 +1,7 @@
 import { api } from '../helpers/api'
+import { ICreateProject } from '../interfaces/project'
 const projectServices = {
-  create: async (data: any) => {
+  create: async (data: ICreateProject) => {
     return await (
       await api.post('/project/create', data)
     ).data

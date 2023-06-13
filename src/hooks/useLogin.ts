@@ -4,13 +4,12 @@ import { useMutation, useQuery } from '@tanstack/react-query'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { login } from '../store/slices/userSlice'
-import { RootState } from '../store'
+import { UserDataLogin } from '../interfaces/user'
 export const useLogin = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const dispatch = useDispatch()
   const navigate = useNavigate()
-  const user: any = useSelector<RootState>((state) => state.user)
 
   const { data, isLoading, isSuccess } = useQuery({
     queryKey: ['auth'],
@@ -18,7 +17,7 @@ export const useLogin = () => {
     retry: false,
   })
 
-  const mutation = useMutation((data: any) => userServices.login(data), {
+  const mutation = useMutation((data: UserDataLogin) => userServices.login(data), {
     onSuccess: (data) => {
       dispatch(login(data))
       navigate('/')
