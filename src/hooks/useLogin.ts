@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import userServices from '../services/userService'
 import { useMutation, useQuery } from '@tanstack/react-query'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { login } from '../store/slices/userSlice'
 import { UserDataLogin } from '../interfaces/user'

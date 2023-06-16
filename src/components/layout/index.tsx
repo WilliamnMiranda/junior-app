@@ -1,11 +1,10 @@
-import React from 'react';
-import * as C from './style';
-import Header from '../header';
+import * as C from './style'
+import Header from '../header'
 
 const index = () => (
   <C.ContainerLayout>
     <Header />
   </C.ContainerLayout>
-);
+)
 
-export default index;
+export default index

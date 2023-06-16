@@ -1,4 +1,3 @@
-import React from 'react'
 import * as C from './style'
 import languages from '../../../../utils/languages'
 import Type from '../../../../components/type'

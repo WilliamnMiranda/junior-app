@@ -1,8 +1,6 @@
 import * as C from './style'
 import LayoutDashboard from '../layout'
-import Project from '../projects/project'
 import { useQuery } from '@tanstack/react-query'
-import projectServices from '../../../services/projectService'
 import nodata from '../../../images/nodata.svg'
 import subscriptionServices from '../../../services/subscription'
 import Subscription from './subscription'

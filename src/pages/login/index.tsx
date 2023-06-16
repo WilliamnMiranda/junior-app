@@ -1,9 +1,9 @@
 import Header from '../../components/header'
 import * as C from './style'
-import { Navigate, useNavigate } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 import { useLogin } from '../../hooks/useLogin'
 const Login = () => {
-  const { setEmail, setPassword, submit, isSuccess, isLoading } = useLogin()
+  const { setEmail, setPassword, submit, isSuccess } = useLogin()
 
   return isSuccess ? (
     <Navigate to="/" />

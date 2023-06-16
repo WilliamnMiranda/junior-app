@@ -40,7 +40,7 @@ function Header() {
             </NavLink>
           </C.ContainerLinkRouter>
           {user.authenticate ? (
-            <div>logado</div>
+            <div>DASHBOARD</div>
           ) : (
             <NavLink to="/login">
               <C.ButtonLogin> ENTRAR </C.ButtonLogin>

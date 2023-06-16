@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import * as C from './style'
 import { AiFillEye, AiOutlineCloseCircle } from 'react-icons/ai'
 import { MdModeEdit } from 'react-icons/md'
@@ -9,7 +8,6 @@ interface IProps {
 }
 
 function Subscription({ subscription, type }: IProps) {
-  const [level, setLevel] = useState('')
   return (
     <C.ContainerProject>
       <C.ContainerInfo>

@@ -1,13 +1,6 @@
 import { ReactElement } from 'react'
 import * as C from './style'
-import {
-  AiFillAppstore,
-  AiOutlineFund,
-  AiOutlineUser,
-  AiOutlineSolution,
-  AiOutlineFire,
-  AiOutlineBell,
-} from 'react-icons/ai'
+import { AiFillAppstore, AiOutlineFund, AiOutlineUser, AiOutlineSolution, AiOutlineBell } from 'react-icons/ai'
 import { NavLink } from 'react-router-dom'
 interface IProps {
   children: ReactElement

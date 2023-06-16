@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux'
 
 const Auth = () => {
   const dispatch = useDispatch()
-  const { data } = useQuery({
+  useQuery({
     queryKey: ['auth'],
     queryFn: () => userServices.auth(),
     retry: false,
